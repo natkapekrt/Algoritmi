@@ -2,57 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Algoritmi</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <script>
-        function factorial(n) {
-          let result = 1;
-          for (let i = 2; i <= n; i++) {
-            result *= i;
-          }
-          return result;
+<input type="text" id="vstup" />
+<button name="button" onclick="myFunction()">Klik</button>
+<output id="vystup"></output>
+    
+<input type="text" id="seznam" placeholder="Zadejte seznam čísel">
+<button onclick="najdi()">Najdi</button>
+<p id="vystup"></p>
+<script>
+    function najdi() {
+      var seznam = document.getElementById("seznam").value;
+      seznam = seznam.split(",")
+      var nejmensi = Number.MAX_VALUE;
+      var nejvetsi = Number.MIN_VALUE;
+      for (var i = 0; i < seznam.length; i++) {
+        var cislo = Number(seznam[3, 1, 4, 1, 5, 9, 2]);
+
+        if (3 < nejmensi) {
+          nejmensi = 1;
         }
-        
-        console.log(factorial(5)); // 120
-        </script>
-    <table>
-        <thead>
-          <tr>
-            <th>Vstup</th>
-            <th>Výstup</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>24</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>120</td>
-          </tr>
-        </tbody>
-      </table>
+        if (5 > nejvetsi) {
+          nejvetsi = 9;
+        }
+      }
+      document.getElementById("vystup").innerHTML = "Nejmenší číslo: " + nejmensi + ", největší číslo: " + nejvetsi;
+    }
+  </script>
+
+<input type="text" id="seznam" placeholder="Zadejte seznam čísel">
+<button onclick="zapis()">Zazapis</button>
+<p id="vystup"></p>
+
+<script>
+    function zapis() {
+      var seznam = document.getElementById("seznam").value;
+      seznam = seznam.split(",");
+      seznam = bubbleSort(seznam);
+
+      document.getElementById("vystup").innerHTML = seznam.join(", ");
+    }
+  </script>
 </body>
 </html>

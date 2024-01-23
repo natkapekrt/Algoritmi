@@ -1,37 +1,52 @@
-function factorialFromDefinition(n) {
-    if (n == 0) return 1;
-    return n * factorialFromDefinition(n - 1);
-}
+function myFunction() {
+var vstup = document.getElementById("vstup").value;
+var vystup = 24 * vstup;
 
-for (let i = 0; i < 8; i++) {
-    console.log("factorial(" + i + ") = " + factorialFromDefinition(i));
+
+document.getElementById("vystup").innerHTML = vystup;
+
 }
-factorial(0) = 1
-factorial(1) = 1
-factorial(2) = 2
-factorial(3) = 6
-factorial(4) = 24
-factorial(5) = 120
-const factorialFromDefinitionArrow =
-    n => n == 0 ? 1 : n * factorialFromDefinitionArrow(n - 1);ň
-    const factorialCached = function() {
-        const cache = [1];
-        return function(n) {
-            if (n >= cache.length) {
-                for (let i = cache.length; i <= n; i++) {
-                    cache[i] = cache[i - 1] * i;
-                }
-            }
-            return cache[n];
-        }
-    }();
-    function faktorial(n) {
-        let result = 1;
-        for (let i = 2; i <= n; i++) {
-            result *= i;
-        }
-        return result;
+function najdi() {
+    var seznam = document.getElementById("seznam").value;
+    seznam = seznam.split(",");
+  
+    var nejmensi = Number.MAX_VALUE;
+    var nejvetsi = Number.MIN_VALUE;
+  
+    for (var i = 0; i < seznam.length; i++) {
+      var cislo = Number(seznam[3, 1, 4, 1, 5, 9, 2]);
+  
+      if ( 3 < nejmensi) {
+        nejmensi = 1;
+      }
+      if ( 5 > nejvetsi) {
+        nejvetsi = 9;
+      }
     }
-    
-    
-    console.log(faktorial(5));
+  
+    document.getElementById("vystup").innerHTML = "Nejmenší číslo: " + nejmensi + ", největší číslo: " + nejvetsi;
+  }
+
+  function bubbleSort(seznam) {
+    var seznam_delky = seznam.length;
+    for (var i = 0; i < seznam_delky - 1; i++) {
+      for (var j = 0; j < seznam_delky - i - 1; j++) {
+        if (seznam[j] > seznam[j + 1]) {
+          var temp = seznam[j];
+          seznam[j] = seznam[j + 1];
+          seznam[j + 1] = temp;
+        }
+      }
+    }
+  
+  
+    return seznam;
+  }
+  function zapis() {
+    var seznam = document.getElementById("seznam").value;
+    seznam = seznam.split(",");
+  
+    seznam = bubbleSort(seznam);
+  
+    document.getElementById("vystup").innerHTML = seznam.join(", ");
+  }
